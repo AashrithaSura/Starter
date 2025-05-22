@@ -257,7 +257,6 @@ footer {
   .skills-list {
     grid-template-columns: 1fr;
   }
-  
   .project-images img {
     width: 160px;
   }
@@ -302,10 +301,12 @@ footer {
   }
   
   .social-links {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 0.8em;
+    flex-wrap: wrap; /* Ensures they wrap if needed */
   }
+}
   
   .languages-list div {
     min-width: 100px;
