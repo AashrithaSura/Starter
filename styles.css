@@ -1,11 +1,12 @@
 html, body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background: url('images/background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #222;
   height: 100%;
+  line-height: 1.6;
 }
 
 body {
@@ -28,19 +29,13 @@ header, footer {
   width: 100%;
   margin: 0 auto;
 }
-.index-container {
-  width: 100%;
-  max-width: 800px; 
-  margin: 1em auto;
-  padding: 1.5em; 
-}
 
 .index-container {
   width: 100%;
-  max-width: 700px; 
+  max-width: 800px;
   margin: 1em auto;
-  padding: 2em;
-  background: rgb(219, 210, 206);
+  padding: 1.5em;
+  background: rgba(219, 210, 206, 0.9);
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.10);
 }
@@ -58,12 +53,7 @@ header, footer {
 main {
   max-width: 800px;
   margin: auto;
-  text-align: center;
-}
-
-.centered-main p {
-  font-size: 1em;
-  line-height: 1.5;
+  padding: 0 1em;
 }
 
 section {
@@ -72,153 +62,204 @@ section {
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.10);
   margin: 1.5em auto;
-  max-width: 800px;
+}
+
+h1, h2, h3, h4 {
+  color: #1d0871;
+  margin-top: 0;
+}
+
+h2 {
+  border-bottom: 2px solid #dcae5ad2;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.8em;
+}
+
+.project-container {
+  margin-bottom: 2.5em;
+}
+
+.project-container:last-child {
+  margin-bottom: 0;
+}
+
+.project-images {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.project-images img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.project-images img:hover {
+  transform: scale(1.03);
+}
+
+.project-features {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.project-features li {
+  margin-bottom: 0.5em;
+  line-height: 1.5;
 }
 
 .skills-list {
-  display: block;
-  padding-left: 1.2em;
-  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 600px;
 }
 
-.skills-list li {
-  display: list-item;
-  margin-bottom: 0.5em;
+.skills-list div {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.8em;
+  border-radius: 8px;
 }
 
 .skill-type {
   font-weight: bold;
-  color: #dcae5ad2;  
-  margin-right: 0.3em;
+  color: #1d0871;
+  display: block;
+  margin-bottom: 0.3em;
 }
 
 .languages-list {
-  margin: 0 auto 1em auto;
-  max-width: 500px;
-  text-align: left;
-  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .languages-list div {
-  margin-bottom: 10px;
-  font-size: 1em;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.8em 1.2em;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
 }
 
 .language-type {
   font-weight: bold;
-  color: #dcae5ad2;
-  margin-right: 6px;
+  color: #1d0871;
 }
 
-.game-images {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-  margin: 10px auto;
-  flex-wrap: wrap;
-}
-
-.game-images img {
-  width: 200px;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.github-btn {
+.github-btn, .download-btn, .linkedin-btn, .colab-btn {
   display: inline-block;
-  padding: 0.5em 1.2em;
-  background: #dcae5ad2;
-  color: #fff !important;
+  padding: 0.6em 1.5em;
+  background: #1d0871;
+  color: white !important;
   border-radius: 6px;
   font-weight: bold;
   text-decoration: none;
-  margin-top: 0.5em;
-  border: none;
-  cursor: pointer;
-  width: auto; 
-  text-align: center;
+  margin: 0.8em 0;
+  transition: all 0.3s ease;
 }
 
-.github-btn:hover {
-  background: #c99b4ad2;
-  text-decoration: underline;
+.github-btn:hover, .download-btn:hover, .linkedin-btn:hover, .colab-btn:hover {
+  background: #3a1ca8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-ul {
-  padding: 0;
+.social-links {
   display: flex;
   justify-content: center;
-  gap: 1em;
+  gap: 1.5em;
   flex-wrap: wrap;
+  margin: 1em 0;
 }
 
-ul li {
-  display: inline;
-}
-
-a {
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
   color: #1d0871;
+  font-weight: 500;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-a:hover {
-  text-decoration: underline;
+.social-links a:hover {
+  color: #3a1ca8;
 }
 
-img {
-  vertical-align: middle;
-  margin-right: 0.5em;
+.social-links img {
+  width: 24px;
+  height: 24px;
 }
 
-.download-btn {
-  display: inline-block;
-  padding: 0.5em 1.2em;
-  background: #dcae5ad2;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-top: 1em;
+.project-status {
+  font-style: italic;
+  color: #555;
+  margin-top: 0.5em;
+  font-size: 0.9em;
 }
 
-.download-btn:hover {
-  background: #c99b4ad2;
-  text-decoration: underline;
+.education-item, .certification-item {
+  margin-bottom: 1.5em;
 }
 
-.center-images {
-  justify-content: center !important;
+.education-item:last-child, .certification-item:last-child {
+  margin-bottom: 0;
 }
 
-.center-languages {
-  text-align: center !important;
+footer {
+  margin-top: 2em;
+  padding: 1.5em;
+  background: rgba(219, 210, 206, 0.7);
+  border-radius: 8px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
-  .game-images img {
-    width: 150px;
+  .skills-list {
+    grid-template-columns: 1fr;
   }
   
-  header .index-container, 
-  main.centered-main .index-container,
-  section {
-    padding: 1em;
+  .project-images img {
+    width: 160px;
+  }
+  
+  .index-container, section {
+    padding: 1.2em;
     margin: 1em;
+  }
+  
+  .project-features {
+    padding-left: 1em;
   }
 }
 
 @media (max-width: 480px) {
-  .game-images img {
-    width: 120px;
+  .project-images img {
+    width: 140px;
   }
   
-  ul {
+  .social-links {
     flex-direction: column;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.8em;
+  }
+  
+  .languages-list div {
+    min-width: 100px;
+  }
+  
+  .project-container {
+    margin-bottom: 2em;
   }
 }
